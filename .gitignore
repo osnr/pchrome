@@ -1,0 +1,9 @@
+typings
+node_modules
+generate.js
+generate.js.map
+background.js
+background.js.map
+example/bundle.js
+example/bundle.js.map
+.DS_Store

@@ -1,0 +1,21 @@
+{
+  "name": "pchrome",
+  "version": "1.0.0",
+  "description": "Promisified Chrome APIs with type declarations.",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "build": "ts-node generate.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome"
+  ],
+  "author": "Omar Rizwan <omar.rizwan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "parsimmon": "^0.5.0",
+    "ts-loader": "^0.8.2"
+  }
+}

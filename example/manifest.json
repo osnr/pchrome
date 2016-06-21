@@ -1,0 +1,12 @@
+{
+  "name": "Promise-CLD",
+  "description": "Displays the language of a tab",
+  "version": "0.1",
+  "background": {
+    "scripts": ["amd.js", "bundle.js", "start.js"]
+  },
+  "browser_action": {
+    "default_name": "Page Language"
+  },
+  "manifest_version": 2
+}

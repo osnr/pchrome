@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es6",
+    "allowJs": true,
+    "sourceMap": true,
+    "outFile": "bundle.js"
+  },
+  "exclude": [
+    "node_modules",
+    "out",
+    "webpack.config.js"
+  ],
+  "files": [
+    "background.ts",
+    "../index.js",
+    "../index.d.ts",
+    "../typings/index.d.ts"
+  ]
+}
