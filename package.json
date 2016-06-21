@@ -1,7 +1,11 @@
 {
   "name": "pchrome",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promisified Chrome APIs with type declarations.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osnr/pchrome.git"
+  },
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
