@@ -188,8 +188,12 @@ interface NamespaceDeclaration {
 const namespaceDeclaration: Parser<NamespaceDeclaration> =
   seq(
     lexemeS('declare')
-      .then(lexemeS('namespace'))
-      .then(identifier.desc('namespace name')),
+      .then(lexemeS('namespace').or(lexemeS('module')))
+      .then(alt(
+        identifier,
+        // They do `declare module "chrome.debugger"` :-(
+        lexemeS('"').then(identifier).skip(lexemeS('"'))
+      ).desc('namespace name')),
     string('{').then(
       alt(
         exportFunctionDeclaration, // First check for 'export function...'.
@@ -254,6 +258,10 @@ declare namespace chrome.contextMenus {
     },
     '\n'
   ]
+});
+assertParse(namespaceDeclaration, `declare namespace "chrome.debugger" {}`, {
+  namespaceName: 'chrome.debugger',
+  children: []
 });
 
 const sourceFile: Parser<NamespaceDeclaration[]> =
@@ -358,7 +366,11 @@ function promiseTransform(ns: NamespaceDeclaration, fn: FunctionDeclaration): Fu
 // it parses as though under ES6 rules.
 function escapeName(name: string): string {
   if (name === 'eval') return 'eval_';
+  else if (name === 'debugger') return 'debugger_';
   else return name;
+}
+function unescapeName(name: string): string {
+  return name.replace(/_$/, '');
 }
 
 /* Generate a .d.ts file. */
@@ -367,7 +379,7 @@ function makeDeclaration(ast: NamespaceDeclaration[]): string {
   const emit = s => out.push(s);
 
   ast.forEach(ns => {
-    const subname = ns.namespaceName.replace('chrome.', '');
+    const subname = escapeName(ns.namespaceName.replace('chrome.', ''));
 
     emit(`export declare namespace ${subname} {\n`);
     ns.children.forEach(child => {
@@ -398,7 +410,7 @@ function makeCode(ast: NamespaceDeclaration[]): string {
 
   const defined = {};
   ast.forEach(ns => {
-    const subname = ns.namespaceName.replace('chrome.', '');
+    const subname = escapeName(ns.namespaceName.replace('chrome.', ''));
     if (!(subname in defined)) {
       let prefix = '';
       subname.split('.').forEach((part, i) => {
@@ -415,7 +427,7 @@ function makeCode(ast: NamespaceDeclaration[]): string {
 // Catch error in case script doesn't have Chrome permission for this namespace.
           emit(
 `try {
-  Object.setPrototypeOf(${prefix}${part}, chrome.${prefix}${part});
+  Object.setPrototypeOf(${prefix}${part}, chrome.${unescapeName(prefix + part)});
 } catch (e) {}
 `);
 

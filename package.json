@@ -1,6 +1,6 @@
 {
   "name": "pchrome",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Promisified Chrome APIs with type declarations.",
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "parsimmon": "^0.5.0",
-    "ts-loader": "^0.8.2"
+    "parsimmon": "^0.5.0"
   }
 }

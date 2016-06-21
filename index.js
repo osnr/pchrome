@@ -650,6 +650,58 @@ cookies.get = function get(...args) {
     chrome.cookies.get.apply(null, args);
   });
 };
+export var debugger_ = {};
+try {
+  Object.setPrototypeOf(debugger_, chrome.debugger);
+} catch (e) {}
+debugger_.attach = function attach(...args) {
+  return new Promise(function(resolve, reject) {
+    args.push(function(...asyncReturns) {
+      if (asyncReturns.length === 1) {
+        resolve(asyncReturns[0])
+      } else {
+        resolve(asyncReturns);
+      }
+    });
+    chrome.debugger.attach.apply(null, args);
+  });
+};
+debugger_.detach = function detach(...args) {
+  return new Promise(function(resolve, reject) {
+    args.push(function(...asyncReturns) {
+      if (asyncReturns.length === 1) {
+        resolve(asyncReturns[0])
+      } else {
+        resolve(asyncReturns);
+      }
+    });
+    chrome.debugger.detach.apply(null, args);
+  });
+};
+debugger_.sendCommand = function sendCommand(...args) {
+  return new Promise(function(resolve, reject) {
+    args.push(function(...asyncReturns) {
+      if (asyncReturns.length === 1) {
+        resolve(asyncReturns[0])
+      } else {
+        resolve(asyncReturns);
+      }
+    });
+    chrome.debugger.sendCommand.apply(null, args);
+  });
+};
+debugger_.getTargets = function getTargets(...args) {
+  return new Promise(function(resolve, reject) {
+    args.push(function(...asyncReturns) {
+      if (asyncReturns.length === 1) {
+        resolve(asyncReturns[0])
+      } else {
+        resolve(asyncReturns);
+      }
+    });
+    chrome.debugger.getTargets.apply(null, args);
+  });
+};
 export var declarativeContent = {};
 try {
   Object.setPrototypeOf(declarativeContent, chrome.declarativeContent);
