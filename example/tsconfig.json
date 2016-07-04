@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "module": "amd",
+    "module": "commonjs",
     "target": "es6",
     "allowJs": true,
     "sourceMap": true,
-    "outFile": "bundle.js"
+    "outDir": "out"
   },
   "exclude": [
     "node_modules",

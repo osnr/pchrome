@@ -3,7 +3,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import * as browser from 'index';
+import * as browser from '../index';
 
 var selectedId = -1;
 async function refreshLanguage() {

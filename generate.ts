@@ -416,7 +416,7 @@ function makeCode(ast: NamespaceDeclaration[]): string {
       subname.split('.').forEach((part, i) => {
         if (!(`${prefix}${part}` in defined)) {
           if (i === 0) {
-            emit('export var ');
+            emit(`var ${prefix}${part} = module.exports.`);
           }
 
           emit(`${prefix}${part} = {};\n`);

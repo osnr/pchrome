@@ -1,8 +1,8 @@
-export var accessibilityFeatures = {};
+var accessibilityFeatures = module.exports.accessibilityFeatures = {};
 try {
   Object.setPrototypeOf(accessibilityFeatures, chrome.accessibilityFeatures);
 } catch (e) {}
-export var alarms = {};
+var alarms = module.exports.alarms = {};
 try {
   Object.setPrototypeOf(alarms, chrome.alarms);
 } catch (e) {}
@@ -78,7 +78,7 @@ alarms.get = function get(...args) {
     chrome.alarms.get.apply(null, args);
   });
 };
-export var browser = {};
+var browser = module.exports.browser = {};
 try {
   Object.setPrototypeOf(browser, chrome.browser);
 } catch (e) {}
@@ -94,7 +94,7 @@ browser.openTab = function openTab(...args) {
     chrome.browser.openTab.apply(null, args);
   });
 };
-export var bookmarks = {};
+var bookmarks = module.exports.bookmarks = {};
 try {
   Object.setPrototypeOf(bookmarks, chrome.bookmarks);
 } catch (e) {}
@@ -254,7 +254,7 @@ bookmarks.removeTree = function removeTree(...args) {
     chrome.bookmarks.removeTree.apply(null, args);
   });
 };
-export var browserAction = {};
+var browserAction = module.exports.browserAction = {};
 try {
   Object.setPrototypeOf(browserAction, chrome.browserAction);
 } catch (e) {}
@@ -318,7 +318,7 @@ browserAction.setIcon = function setIcon(...args) {
     chrome.browserAction.setIcon.apply(null, args);
   });
 };
-export var browsingData = {};
+var browsingData = module.exports.browsingData = {};
 try {
   Object.setPrototypeOf(browsingData, chrome.browsingData);
 } catch (e) {}
@@ -490,7 +490,7 @@ browsingData.removeIndexedDB = function removeIndexedDB(...args) {
     chrome.browsingData.removeIndexedDB.apply(null, args);
   });
 };
-export var commands = {};
+var commands = module.exports.commands = {};
 try {
   Object.setPrototypeOf(commands, chrome.commands);
 } catch (e) {}
@@ -506,11 +506,11 @@ commands.getAll = function getAll(...args) {
     chrome.commands.getAll.apply(null, args);
   });
 };
-export var contentSettings = {};
+var contentSettings = module.exports.contentSettings = {};
 try {
   Object.setPrototypeOf(contentSettings, chrome.contentSettings);
 } catch (e) {}
-export var contextMenus = {};
+var contextMenus = module.exports.contextMenus = {};
 try {
   Object.setPrototypeOf(contextMenus, chrome.contextMenus);
 } catch (e) {}
@@ -586,7 +586,7 @@ contextMenus.remove = function remove(...args) {
     chrome.contextMenus.remove.apply(null, args);
   });
 };
-export var cookies = {};
+var cookies = module.exports.cookies = {};
 try {
   Object.setPrototypeOf(cookies, chrome.cookies);
 } catch (e) {}
@@ -650,7 +650,7 @@ cookies.get = function get(...args) {
     chrome.cookies.get.apply(null, args);
   });
 };
-export var debugger_ = {};
+var debugger_ = module.exports.debugger_ = {};
 try {
   Object.setPrototypeOf(debugger_, chrome.debugger);
 } catch (e) {}
@@ -702,19 +702,19 @@ debugger_.getTargets = function getTargets(...args) {
     chrome.debugger.getTargets.apply(null, args);
   });
 };
-export var declarativeContent = {};
+var declarativeContent = module.exports.declarativeContent = {};
 try {
   Object.setPrototypeOf(declarativeContent, chrome.declarativeContent);
 } catch (e) {}
-export var declarativeWebRequest = {};
+var declarativeWebRequest = module.exports.declarativeWebRequest = {};
 try {
   Object.setPrototypeOf(declarativeWebRequest, chrome.declarativeWebRequest);
 } catch (e) {}
-export var desktopCapture = {};
+var desktopCapture = module.exports.desktopCapture = {};
 try {
   Object.setPrototypeOf(desktopCapture, chrome.desktopCapture);
 } catch (e) {}
-export var devtools = {};
+var devtools = module.exports.devtools = {};
 try {
   Object.setPrototypeOf(devtools, chrome.devtools);
 } catch (e) {}
@@ -802,7 +802,7 @@ devtools.panels.openResource = function openResource(...args) {
     chrome.devtools.panels.openResource.apply(null, args);
   });
 };
-export var documentScan = {};
+var documentScan = module.exports.documentScan = {};
 try {
   Object.setPrototypeOf(documentScan, chrome.documentScan);
 } catch (e) {}
@@ -818,7 +818,7 @@ documentScan.scan = function scan(...args) {
     chrome.documentScan.scan.apply(null, args);
   });
 };
-export var downloads = {};
+var downloads = module.exports.downloads = {};
 try {
   Object.setPrototypeOf(downloads, chrome.downloads);
 } catch (e) {}
@@ -942,7 +942,7 @@ downloads.acceptDanger = function acceptDanger(...args) {
     chrome.downloads.acceptDanger.apply(null, args);
   });
 };
-export var enterprise = {};
+var enterprise = module.exports.enterprise = {};
 try {
   Object.setPrototypeOf(enterprise, chrome.enterprise);
 } catch (e) {}
@@ -998,11 +998,11 @@ enterprise.platformKeys.removeCertificate = function removeCertificate(...args) 
     chrome.enterprise.platformKeys.removeCertificate.apply(null, args);
   });
 };
-export var events = {};
+var events = module.exports.events = {};
 try {
   Object.setPrototypeOf(events, chrome.events);
 } catch (e) {}
-export var extension = {};
+var extension = module.exports.extension = {};
 try {
   Object.setPrototypeOf(extension, chrome.extension);
 } catch (e) {}
@@ -1054,7 +1054,7 @@ extension.sendRequest = function sendRequest(...args) {
     chrome.extension.sendRequest.apply(null, args);
   });
 };
-export var fileBrowserHandler = {};
+var fileBrowserHandler = module.exports.fileBrowserHandler = {};
 try {
   Object.setPrototypeOf(fileBrowserHandler, chrome.fileBrowserHandler);
 } catch (e) {}
@@ -1070,7 +1070,7 @@ fileBrowserHandler.selectFile = function selectFile(...args) {
     chrome.fileBrowserHandler.selectFile.apply(null, args);
   });
 };
-export var fileSystemProvider = {};
+var fileSystemProvider = module.exports.fileSystemProvider = {};
 try {
   Object.setPrototypeOf(fileSystemProvider, chrome.fileSystemProvider);
 } catch (e) {}
@@ -1134,7 +1134,7 @@ fileSystemProvider.notify = function notify(...args) {
     chrome.fileSystemProvider.notify.apply(null, args);
   });
 };
-export var fontSettings = {};
+var fontSettings = module.exports.fontSettings = {};
 try {
   Object.setPrototypeOf(fontSettings, chrome.fontSettings);
 } catch (e) {}
@@ -1294,7 +1294,7 @@ fontSettings.clearDefaultFixedFontSize = function clearDefaultFixedFontSize(...a
     chrome.fontSettings.clearDefaultFixedFontSize.apply(null, args);
   });
 };
-export var gcm = {};
+var gcm = module.exports.gcm = {};
 try {
   Object.setPrototypeOf(gcm, chrome.gcm);
 } catch (e) {}
@@ -1334,7 +1334,7 @@ gcm.send = function send(...args) {
     chrome.gcm.send.apply(null, args);
   });
 };
-export var history = {};
+var history = module.exports.history = {};
 try {
   Object.setPrototypeOf(history, chrome.history);
 } catch (e) {}
@@ -1410,7 +1410,7 @@ history.deleteUrl = function deleteUrl(...args) {
     chrome.history.deleteUrl.apply(null, args);
   });
 };
-export var i18n = {};
+var i18n = module.exports.i18n = {};
 try {
   Object.setPrototypeOf(i18n, chrome.i18n);
 } catch (e) {}
@@ -1426,7 +1426,7 @@ i18n.getAcceptLanguages = function getAcceptLanguages(...args) {
     chrome.i18n.getAcceptLanguages.apply(null, args);
   });
 };
-export var identity = {};
+var identity = module.exports.identity = {};
 try {
   Object.setPrototypeOf(identity, chrome.identity);
 } catch (e) {}
@@ -1490,7 +1490,7 @@ identity.launchWebAuthFlow = function launchWebAuthFlow(...args) {
     chrome.identity.launchWebAuthFlow.apply(null, args);
   });
 };
-export var idle = {};
+var idle = module.exports.idle = {};
 try {
   Object.setPrototypeOf(idle, chrome.idle);
 } catch (e) {}
@@ -1506,7 +1506,7 @@ idle.queryState = function queryState(...args) {
     chrome.idle.queryState.apply(null, args);
   });
 };
-export var input = {};
+var input = module.exports.input = {};
 try {
   Object.setPrototypeOf(input, chrome.input);
 } catch (e) {}
@@ -1634,7 +1634,7 @@ input.ime.deleteSurroundingText = function deleteSurroundingText(...args) {
     chrome.input.ime.deleteSurroundingText.apply(null, args);
   });
 };
-export var management = {};
+var management = module.exports.management = {};
 try {
   Object.setPrototypeOf(management, chrome.management);
 } catch (e) {}
@@ -1806,7 +1806,7 @@ management.generateAppForLink = function generateAppForLink(...args) {
     chrome.management.generateAppForLink.apply(null, args);
   });
 };
-export var networking = {};
+var networking = module.exports.networking = {};
 try {
   Object.setPrototypeOf(networking, chrome.networking);
 } catch (e) {}
@@ -1838,7 +1838,7 @@ networking.config.finishAuthentication = function finishAuthentication(...args) 
     chrome.networking.config.finishAuthentication.apply(null, args);
   });
 };
-export var notifications = {};
+var notifications = module.exports.notifications = {};
 try {
   Object.setPrototypeOf(notifications, chrome.notifications);
 } catch (e) {}
@@ -1914,11 +1914,11 @@ notifications.getPermissionLevel = function getPermissionLevel(...args) {
     chrome.notifications.getPermissionLevel.apply(null, args);
   });
 };
-export var omnibox = {};
+var omnibox = module.exports.omnibox = {};
 try {
   Object.setPrototypeOf(omnibox, chrome.omnibox);
 } catch (e) {}
-export var pageAction = {};
+var pageAction = module.exports.pageAction = {};
 try {
   Object.setPrototypeOf(pageAction, chrome.pageAction);
 } catch (e) {}
@@ -1958,7 +1958,7 @@ pageAction.setIcon = function setIcon(...args) {
     chrome.pageAction.setIcon.apply(null, args);
   });
 };
-export var pageCapture = {};
+var pageCapture = module.exports.pageCapture = {};
 try {
   Object.setPrototypeOf(pageCapture, chrome.pageCapture);
 } catch (e) {}
@@ -1974,7 +1974,7 @@ pageCapture.saveAsMHTML = function saveAsMHTML(...args) {
     chrome.pageCapture.saveAsMHTML.apply(null, args);
   });
 };
-export var permissions = {};
+var permissions = module.exports.permissions = {};
 try {
   Object.setPrototypeOf(permissions, chrome.permissions);
 } catch (e) {}
@@ -2026,7 +2026,7 @@ permissions.remove = function remove(...args) {
     chrome.permissions.remove.apply(null, args);
   });
 };
-export var platformKeys = {};
+var platformKeys = module.exports.platformKeys = {};
 try {
   Object.setPrototypeOf(platformKeys, chrome.platformKeys);
 } catch (e) {}
@@ -2066,23 +2066,23 @@ platformKeys.verifyTLSServerCertificate = function verifyTLSServerCertificate(..
     chrome.platformKeys.verifyTLSServerCertificate.apply(null, args);
   });
 };
-export var power = {};
+var power = module.exports.power = {};
 try {
   Object.setPrototypeOf(power, chrome.power);
 } catch (e) {}
-export var printerProvider = {};
+var printerProvider = module.exports.printerProvider = {};
 try {
   Object.setPrototypeOf(printerProvider, chrome.printerProvider);
 } catch (e) {}
-export var privacy = {};
+var privacy = module.exports.privacy = {};
 try {
   Object.setPrototypeOf(privacy, chrome.privacy);
 } catch (e) {}
-export var proxy = {};
+var proxy = module.exports.proxy = {};
 try {
   Object.setPrototypeOf(proxy, chrome.proxy);
 } catch (e) {}
-export var runtime = {};
+var runtime = module.exports.runtime = {};
 try {
   Object.setPrototypeOf(runtime, chrome.runtime);
 } catch (e) {}
@@ -2218,7 +2218,7 @@ runtime.openOptionsPage = function openOptionsPage(...args) {
     chrome.runtime.openOptionsPage.apply(null, args);
   });
 };
-export var scriptBadge = {};
+var scriptBadge = module.exports.scriptBadge = {};
 try {
   Object.setPrototypeOf(scriptBadge, chrome.scriptBadge);
 } catch (e) {}
@@ -2234,7 +2234,7 @@ scriptBadge.getPopup = function getPopup(...args) {
     chrome.scriptBadge.getPopup.apply(null, args);
   });
 };
-export var sessions = {};
+var sessions = module.exports.sessions = {};
 try {
   Object.setPrototypeOf(sessions, chrome.sessions);
 } catch (e) {}
@@ -2298,11 +2298,11 @@ sessions.restore = function restore(...args) {
     chrome.sessions.restore.apply(null, args);
   });
 };
-export var storage = {};
+var storage = module.exports.storage = {};
 try {
   Object.setPrototypeOf(storage, chrome.storage);
 } catch (e) {}
-export var socket = {};
+var socket = module.exports.socket = {};
 try {
   Object.setPrototypeOf(socket, chrome.socket);
 } catch (e) {}
@@ -2462,7 +2462,7 @@ socket.getNetworkList = function getNetworkList(...args) {
     chrome.socket.getNetworkList.apply(null, args);
   });
 };
-export var system = {};
+var system = module.exports.system = {};
 try {
   Object.setPrototypeOf(system, chrome.system);
 } catch (e) {}
@@ -2538,7 +2538,7 @@ system.storage.getAvailableCapacity = function getAvailableCapacity(...args) {
     chrome.system.storage.getAvailableCapacity.apply(null, args);
   });
 };
-export var tabCapture = {};
+var tabCapture = module.exports.tabCapture = {};
 try {
   Object.setPrototypeOf(tabCapture, chrome.tabCapture);
 } catch (e) {}
@@ -2566,7 +2566,7 @@ tabCapture.getCapturedTabs = function getCapturedTabs(...args) {
     chrome.tabCapture.getCapturedTabs.apply(null, args);
   });
 };
-export var tabs = {};
+var tabs = module.exports.tabs = {};
 try {
   Object.setPrototypeOf(tabs, chrome.tabs);
 } catch (e) {}
@@ -3050,7 +3050,7 @@ tabs.getZoomSettings = function getZoomSettings(...args) {
     chrome.tabs.getZoomSettings.apply(null, args);
   });
 };
-export var topSites = {};
+var topSites = module.exports.topSites = {};
 try {
   Object.setPrototypeOf(topSites, chrome.topSites);
 } catch (e) {}
@@ -3066,7 +3066,7 @@ topSites.get = function get(...args) {
     chrome.topSites.get.apply(null, args);
   });
 };
-export var tts = {};
+var tts = module.exports.tts = {};
 try {
   Object.setPrototypeOf(tts, chrome.tts);
 } catch (e) {}
@@ -3118,15 +3118,15 @@ tts.speak = function speak(...args) {
     chrome.tts.speak.apply(null, args);
   });
 };
-export var ttsEngine = {};
+var ttsEngine = module.exports.ttsEngine = {};
 try {
   Object.setPrototypeOf(ttsEngine, chrome.ttsEngine);
 } catch (e) {}
-export var types = {};
+var types = module.exports.types = {};
 try {
   Object.setPrototypeOf(types, chrome.types);
 } catch (e) {}
-export var vpnProvider = {};
+var vpnProvider = module.exports.vpnProvider = {};
 try {
   Object.setPrototypeOf(vpnProvider, chrome.vpnProvider);
 } catch (e) {}
@@ -3190,7 +3190,7 @@ vpnProvider.notifyConnectionStateChanged = function notifyConnectionStateChanged
     chrome.vpnProvider.notifyConnectionStateChanged.apply(null, args);
   });
 };
-export var wallpaper = {};
+var wallpaper = module.exports.wallpaper = {};
 try {
   Object.setPrototypeOf(wallpaper, chrome.wallpaper);
 } catch (e) {}
@@ -3206,7 +3206,7 @@ wallpaper.setWallpaper = function setWallpaper(...args) {
     chrome.wallpaper.setWallpaper.apply(null, args);
   });
 };
-export var webNavigation = {};
+var webNavigation = module.exports.webNavigation = {};
 try {
   Object.setPrototypeOf(webNavigation, chrome.webNavigation);
 } catch (e) {}
@@ -3234,7 +3234,7 @@ webNavigation.getAllFrames = function getAllFrames(...args) {
     chrome.webNavigation.getAllFrames.apply(null, args);
   });
 };
-export var webRequest = {};
+var webRequest = module.exports.webRequest = {};
 try {
   Object.setPrototypeOf(webRequest, chrome.webRequest);
 } catch (e) {}
@@ -3250,7 +3250,7 @@ webRequest.handlerBehaviorChanged = function handlerBehaviorChanged(...args) {
     chrome.webRequest.handlerBehaviorChanged.apply(null, args);
   });
 };
-export var webstore = {};
+var webstore = module.exports.webstore = {};
 try {
   Object.setPrototypeOf(webstore, chrome.webstore);
 } catch (e) {}
@@ -3266,7 +3266,7 @@ webstore.install = function install(...args) {
     chrome.webstore.install.apply(null, args);
   });
 };
-export var windows = {};
+var windows = module.exports.windows = {};
 try {
   Object.setPrototypeOf(windows, chrome.windows);
 } catch (e) {}
