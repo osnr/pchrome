@@ -50,8 +50,8 @@ Then run `npm run build`, which executes `generate.ts`. That produces
 
 There's an example Chrome extension in the `example/` subfolder.
 
-Run `tsc` in that folder (assuming you have TypeScript installed).
-It will generate the `bundle.js` for the Chrome extension from
-`background.ts` and the pchrome library in the parent folder.
+Run `webpack` in that folder (assuming you have webpack and TypeScript
+installed).  It will generate the `bundle.js` for the Chrome extension
+from `background.ts` and the pchrome library in the parent folder.
 
 Then load `example/` into Chrome as an unpacked extension.
